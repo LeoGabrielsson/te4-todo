@@ -1,12 +1,12 @@
-function Todoitem(props) {
-    let { id, done, lable } = props
+function TodoItem(props) {
+    let { id, completed, lable } = props
 
 
     return (
         <li>
             <label>{lable}</label>
             <input
-                checked={done}
+                checked={completed}
                 onChange={() => {
                     props.toggleTaskCompleted(id)
                 }}
@@ -17,4 +17,4 @@ function Todoitem(props) {
 
 }
 
-export default Todoitem
+export default TodoItem
