@@ -18,19 +18,23 @@ function TodoList() {
         const newTodos = [...todos, { id: todos.length + 1, lable: newTodo, completed: false }]
         setTodos(newTodos)
     }
-    const toggleTaskCompleted = (id) => {}
+    const toggleTaskCompleted = (id) => { }
 
     return (
-        <ul className='Todo-List'>
-            {todos.map((todo, index) =>
-                <TodoItem
-                    key={index}
-                    id={todo.id}
-                    lable={todo.lable}
-                    done={todo.completed}
-                    toggleTaskCompleted={toggleTaskCompleted} />
-            )}
-        </ul>
+        <>
+            <input id='newTodo' type="text" placeholder='Skriv in en sak att göra' />
+            <button onClick={() => { addTodo()}}>Lägg till på listan</button>
+            <ul className='Todo-List'>
+                {todos.map((todo, index) =>
+                    <TodoItem
+                        key={index}
+                        id={todo.id}
+                        lable={todo.lable}
+                        done={todo.completed}
+                        toggleTaskCompleted={toggleTaskCompleted} />
+                )}
+            </ul>
+        </>
     )
 }
 
